@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>TQI Análise de crédito — Solicitação</title>
+</head>
+<body>
+
+<div class="container mx-auto">
+    <div class="text-center mt-6">
+        <img class="text-center" src="https://media.glassdoor.com/sqll/1039569/tqi-technology-and-quality-on-information-squarelogo-1496901520013.png">
+        <h1 class="h3 font-weight-normal mb-5">Informe os dados para realizar uma solicitação de crédito:</h1>
+
+        <form th:object="${requisicaoNovaSolicitacao}" th:action="@{novaSolicitacao}" method="POST">
+            <div class="row">
+                <div class="form-group">
+                    <div class="mt-1 col-lg-6 mx-auto">
+                        <div th:errors="*{valor}">Erro valor</div>
+                        <div th:errors="*{valor}" class="invalid-feedback">Erro valor</div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Valor da Solicitação:</span>
+                            </div>
+                            <input th:field="*{valor}" th:errorclass="is-invalid" type="text" maxlength="50" class="form-control" placeholder="Ex: 5250.00" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="mt-1 col-lg-6 mx-auto">
+                        <div th:errors="*{quantidadeParcelas}">Erro parcelas</div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2">Quantidade de parcelas:</span>
+                            </div>
+                            <input th:field="*{quantidadeParcelas}" th:errorclass="is-invalid" type="text" maxlength="30" class="form-control" placeholder="No máximo 60 parcelas" aria-label="E-mail" aria-describedby="basic-addon2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <div class="mt-1 col-lg-6 mx-auto">
+                        <div th:errors="*{dataPrimeiraParcela}">Erro data</div>
+                        <div th:errors="*{dataPrimeiraParcela}" class="invalid-feedback">Erro data</div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon4">Data da primeira parcela:</span>
+                            </div>
+                            <input th:field="*{dataPrimeiraParcela}" th:errorclass="is-invalid" type="text" maxlength="20" class="form-control" placeholder="Ex: dd/mm/aaaa" aria-label="RG" aria-describedby="basic-addon4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success mt-2">Salvar solicitação</button>
+            <a type="button" class="btn btn-danger mt-2" href="/home">Cancelar</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

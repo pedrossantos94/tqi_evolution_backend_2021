@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>TQI Análise de crédito — Cadastro de usuário</title>
+    </head>
+    <body>
+
+        <div class="container mx-auto">
+            <div class="text-center mt-6">
+                <img class="text-center" src="https://media.glassdoor.com/sqll/1039569/tqi-technology-and-quality-on-information-squarelogo-1496901520013.png">
+                <h1 class="h3 font-weight-normal mb-5">Informe os dados para cadastrar um novo usuário:</h1>
+
+                <form th:object="${requisicaoNovoUsuario}" th:action="@{cadastroUsuario}" method="POST">
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{nome}">Erro nome</div>
+                                <div th:errors="*{nome}" class="invalid-feedback">Erro nome</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1">Nome:</span>
+                                    </div>
+                                    <input th:field="*{nome}" th:errorclass="is-invalid" type="text" maxlength="50" class="form-control" placeholder="Ex: João Lopes Silva" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{email}">Erro email</div>
+                                <div th:errors="*{email}" class="invalid-feedback">Erro email</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon2">E-mail:</span>
+                                    </div>
+                                    <input th:field="*{email}" th:errorclass="is-invalid" type="text" maxlength="30" class="form-control" placeholder="Ex: seuemail@dominio.com" aria-label="E-mail" aria-describedby="basic-addon2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{senha}">Erro senha</div>
+                                <div th:errors="*{senha}" class="invalid-feedback">Erro senha</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon3">Senha:</span>
+                                    </div>
+                                    <input th:field="*{senha}" th:errorclass="is-invalid" type="password" maxlength="10" class="form-control" placeholder="Max. 10 caracteres" aria-label="Senha" aria-describedby="basic-addon3">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{rg}">Erro rg</div>
+                                <div th:errors="*{rg}" class="invalid-feedback">Erro rg</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon4">RG:</span>
+                                    </div>
+                                    <input th:field="*{rg}" th:errorclass="is-invalid" type="text" maxlength="20" class="form-control" placeholder="Ex: 000000000-00" aria-label="RG" aria-describedby="basic-addon4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{cpf}">Erro cpf</div>
+                                <div th:errors="*{cpf}" class="invalid-feedback">Erro cpf</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon5">CPF:</span>
+                                    </div>
+                                    <input th:field="*{cpf}" th:errorclass="is-invalid" type="text" maxlength="14" class="form-control" placeholder="Ex: 000.000.000-00" aria-label="CPF" aria-describedby="basic-addon5">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{renda}">Erro renda</div>
+                                <div th:errors="*{renda}" class="invalid-feedback">Erro renda</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon6">Renda:</span>
+                                    </div>
+                                    <input th:field="*{renda}" th:errorclass="is-invalid" type="text" maxlength="14" class="form-control" placeholder="Ex: 2500.00" aria-label="Renda" aria-describedby="basic-addon6">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{endereco}">Erro endereco</div>
+                                <div th:errors="*{endereco}" class="invalid-feedback">Erro endereço</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon7">Endereço:</span>
+                                    </div>
+                                    <input th:field="*{endereco}" th:errorclass="is-invalid" type="text" maxlength="100" class="form-control" placeholder="Ex: Rua 5, casa 10" aria-label="Endereço" aria-describedby="basic-addon7">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="mt-1 col-lg-6 mx-auto">
+                                <div th:errors="*{complemento}">Erro complemento</div>
+                                <div th:errors="*{complemento}" class="invalid-feedback">Erro complemento</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon8">Complemento:</span>
+                                    </div>
+                                    <input th:field="*{complemento}" th:errorclass="is-invalid" type="text" maxlength="100" class="form-control" placeholder="Ex: Condomínio Pacífico, bloco 3, apto 105" aria-label="Complemento" aria-describedby="basic-addon8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-2">Salvar cadastro</button>
+                    <a type="button" class="btn btn-danger mt-2" href="/home">Cancelar</a>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
