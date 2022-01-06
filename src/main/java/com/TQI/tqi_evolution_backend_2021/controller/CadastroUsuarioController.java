@@ -36,7 +36,7 @@ public class CadastroUsuarioController {
     public String salvaUsuario(@Valid RequisicaoNovoUsuario requisicao, BindingResult result){
 
         if(result.hasErrors()){
-            return "/cadastroUsuario";
+            return "cadastroUsuario";
         }
 
         Cliente temp = requisicao.toUsuario();

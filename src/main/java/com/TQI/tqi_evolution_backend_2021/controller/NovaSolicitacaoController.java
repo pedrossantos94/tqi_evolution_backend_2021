@@ -33,7 +33,7 @@ public class NovaSolicitacaoController {
     @PostMapping("/novaSolicitacao")
     public String salvaSolicitacao(@Valid RequisicaoNovaSolicitacao requisicao, BindingResult result){
         if(result.hasErrors()){
-            return "/novaSolicitacao";
+            return "novaSolicitacao";
         }
 
         String username = SecurityContextHolder.getContext().getAuthentication().getName();
