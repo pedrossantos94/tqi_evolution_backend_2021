@@ -23,7 +23,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">Valor da Solicitação:</span>
                             </div>
-                            <input th:field="*{valor}" th:errorclass="is-invalid" type="text" maxlength="50" class="form-control" placeholder="Ex: 5250.00" aria-label="Username" aria-describedby="basic-addon1">
+                            <input th:field="*{valor}" th:errorclass="is-invalid" type="number" min="1" step="0.01" maxlength="50" class="form-control" placeholder="Ex: 5250.00" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon2">Quantidade de parcelas:</span>
                             </div>
-                            <input th:field="*{quantidadeParcelas}" th:errorclass="is-invalid" type="text" maxlength="30" class="form-control" placeholder="No máximo 60 parcelas" aria-label="E-mail" aria-describedby="basic-addon2">
+                            <input th:field="*{quantidadeParcelas}" th:errorclass="is-invalid" type="number" min="1" max="60" step="1" maxlength="30" class="form-control" placeholder="No máximo 60 parcelas" aria-label="E-mail" aria-describedby="basic-addon2">
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon4">Data da primeira parcela:</span>
                             </div>
-                            <input th:field="*{dataPrimeiraParcela}" th:errorclass="is-invalid" type="text" maxlength="20" class="form-control" placeholder="Ex: dd/mm/aaaa" aria-label="RG" aria-describedby="basic-addon4">
+                            <input th:field="*{dataPrimeiraParcela}" th:errorclass="is-invalid" type="date" maxlength="20" class="form-control" placeholder="Ex: dd/mm/aaaa" aria-label="RG" aria-describedby="basic-addon4">
                         </div>
                     </div>
                 </div>
