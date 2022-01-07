@@ -2,6 +2,7 @@ package com.TQI.tqi_evolution_backend_2021.datatransferobjects;
 
 import com.TQI.tqi_evolution_backend_2021.model.Cliente;
 import com.TQI.tqi_evolution_backend_2021.validator.emailIsValid;
+import org.hibernate.validator.constraints.br.CPF;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -22,6 +23,7 @@ public class RequisicaoNovoUsuario {
     private String rg;
 
     @NotBlank(message = "O CPF não pode estar em branco")
+    @CPF (message = "Informe um CPF válido")
     private String cpf;
 
     @NotBlank(message = "A renda não pode estar em branco")
