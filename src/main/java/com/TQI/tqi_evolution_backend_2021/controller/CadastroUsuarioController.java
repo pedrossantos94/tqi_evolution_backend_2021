@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
+import java.security.Principal;
 
 @Controller
 public class CadastroUsuarioController {
@@ -33,7 +34,7 @@ public class CadastroUsuarioController {
     }
 
     @PostMapping("/cadastroUsuario")
-    public String salvaUsuario(@Valid RequisicaoNovoUsuario requisicao, BindingResult result){
+    public String salvaUsuario(@Valid RequisicaoNovoUsuario requisicao, BindingResult result, Principal principal){
 
         if(result.hasErrors()){
             return "cadastroUsuario";
@@ -54,7 +55,8 @@ public class CadastroUsuarioController {
 
         userRepository.save(novoUser);
         authorityRepository.save(authority);
-        return "/login";
+        
+        return "home";
     }
 }
 
