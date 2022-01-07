@@ -44,12 +44,15 @@ Por em prática os conteúdos vistos durante o Bootcamp TQI Java Developer com c
 </p>
 
 # 🛠️ Ferramentas utilizadas:
+◀️Back-End
 - Java 11
 - SQL
 - Maven
 - Spring Boot
 - Spring JPA
 - Spring Security
+
+▶️Front-End
 - Thymeleaf
 - HTML
 - Bootstrap
