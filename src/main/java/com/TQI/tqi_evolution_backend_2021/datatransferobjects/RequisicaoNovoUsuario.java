@@ -4,6 +4,7 @@ import com.TQI.tqi_evolution_backend_2021.model.Cliente;
 import com.TQI.tqi_evolution_backend_2021.validator.emailIsValid;
 import org.hibernate.validator.constraints.br.CPF;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 
@@ -14,6 +15,7 @@ public class RequisicaoNovoUsuario {
 
     @NotBlank(message = "O e-mail não pode estar em branco")
     @emailIsValid
+    @Email
     private String email;
 
     @NotBlank(message = "A senha não pode estar em branco")
