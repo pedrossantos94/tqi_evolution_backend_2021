@@ -9,7 +9,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String inicio(){
-        return "redirect:/home";
+        return "home";
     }
 
     @GetMapping("/home")
