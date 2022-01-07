@@ -55,7 +55,7 @@ public class CadastroUsuarioController {
 
         userRepository.save(novoUser);
         authorityRepository.save(authority);
-        
+
         return "home";
     }
 }
